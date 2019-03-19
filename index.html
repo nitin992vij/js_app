@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Personal Expense</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body{
+			display:flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;			
+		}
+	</style>
+</head>
+<body>
+	<h1 id="headingTotal">0</h1>
+	<button id="btnAddExpense"> +</button>
+	<input id="inputAmount" type="text"></input>
+	<script >
+
+		// get the heading element
+		const headingEl = document.querySelector("#headingTotal");
+		
+		// init value of expense at 0
+		let totalExpense = 0;
+
+		//set the heading element to toalExpense
+		headingEl.textContent = totalExpense;
+		//onButtonClick add  inputAmount to total Expense
+			function addExpenseToTotal()
+			 {
+
+			
+			//read value from input amount
+			const inputElement = document.querySelector("#inputAmount");
+			const textAmount= inputElement.value;
+			
+
+			//convert it into number
+			expense = parseInt(textAmount,10);
+			
+			
+
+			//add that value to totalExpense
+			totalExpense = totalExpense + expense;
+			
+			//set the heading element to total expense
+			headingEl.textContent=totalExpense;
+			}
+		
+
+		
+		
+		// Get the button element 
+		const element = document.querySelector("#btnAddExpense");
+			
+		//listen to click event
+		element.addEventListener("click", addExpenseToTotal, false )
+			
+		
+			
+			
+	</script>
+
+</body>
+</html>
